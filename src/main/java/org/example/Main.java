@@ -1,5 +1,6 @@
 package org.example;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +30,8 @@ public class Main {
         Map<String, Double> salaries = salaryCalculator.calculateSalary(employees);
 
         for (String nationalId : salaries.keySet()) {
-            System.out.println(nationalId + " -> " + String.format(".%.2f", salaries.get(nationalId)));
+//            System.out.println("National Id: " + nationalId + " -> Salary: " + String.format("%.0f", salaries.get(nationalId)));
+            System.out.println("National Id: " + nationalId + " -> Salary: " + new DecimalFormat("###,###").format(salaries.get(nationalId)) + " Toman");
         }
     }
 }
